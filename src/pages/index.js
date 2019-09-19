@@ -5,8 +5,8 @@ import Loader from "../components/common/loader"
 import "../theme/index.css"
 
 import About from "./about"
-import Contact from "./Contact"
-import Benefits from "./Benefits"
+import Contact from "./contact"
+import Benefits from "./benefits"
 
 class IndexPage extends React.Component {
   state = {

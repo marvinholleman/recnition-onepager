@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 
 import Container from "../components/common/container"
-import Button from "../components/common/Button"
+import Button from "../components/common/button"
 import Title from "../components/common/title"
 
 import ScrollAnimation from "react-animate-on-scroll"
