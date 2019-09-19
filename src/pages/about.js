@@ -75,6 +75,10 @@ const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    flex-direction: column;
+  }
 `
 
 const DescriptionImage = styled.img`

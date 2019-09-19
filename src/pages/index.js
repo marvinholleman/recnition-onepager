@@ -10,13 +10,13 @@ import Benefits from "./benefits"
 
 class IndexPage extends React.Component {
   state = {
-    loading: true,
+    loading: false,
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ loading: false })
-    }, 3200)
+    // setTimeout(() => {
+    //   this.setState({ loading: false })
+    // }, 3200)
   }
 
   render() {

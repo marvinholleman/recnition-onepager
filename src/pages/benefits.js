@@ -89,6 +89,10 @@ const BenefitBlock = styled.div`
     cursor: pointer;
     box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    margin: 25px 0px;
+  }
 `
 
 const BenefitIcon = styled(FontAwesomeIcon)`

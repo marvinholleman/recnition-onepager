@@ -18,7 +18,7 @@ class Header extends Component {
     window.scroll({
       behavior: "smooth",
       left: 0,
-      top: 800,
+      top: 4300,
     })
   }
 
@@ -46,7 +46,7 @@ class Header extends Component {
                   delay={1600}
                 >
                   <MoreButton onClick={e => this.scrollTo()}>
-                    Hoe werkt het ?
+                    Meer informatie?
                   </MoreButton>
                 </ButtonContainer>
               </HeroTextContainer>
@@ -78,6 +78,10 @@ const Hero = styled.div`
   background-size: cover;
   display: flex;
   background-position-y: 50%;
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    background-position-x: 60%;
+  }
 `
 
 const Logo = styled.img`
@@ -90,6 +94,11 @@ const Logo = styled.img`
 const HeroTextContainer = styled(ScrollAnimation)`
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    position: relative;
+    right: 80px;
+  }
 `
 
 const HeroText = styled.h1`

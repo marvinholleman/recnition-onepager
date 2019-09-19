@@ -68,6 +68,11 @@ const ScrolltoTopButton = styled.a`
     background-color: #f7f7f7;
     transform: translate(0, -10px);
   }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    right: 15px;
+    bottom: 50px;
+  }
 `
 
 Footer.propTypes = {}
