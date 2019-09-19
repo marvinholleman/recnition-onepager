@@ -31,14 +31,21 @@ class Contact extends React.Component {
                 Neem hier contact op.
               </Title>
             </ContactInfo>
-            <ContactForm animateIn="fadeInUp" animateOnce={true}>
-              <InputFieldWrapper>
-                <Input placeholder="Naam" />
-                <Input placeholder="E-mail" />
-              </InputFieldWrapper>
-              <TextArea placeholder="Bericht" />
-              <SendButton>Verzenden </SendButton>
-            </ContactForm>
+            <ContactFormWrapper animateIn="fadeInUp" animateOnce={true}>
+              <ContactForm
+                data-netlify-recaptcha="true"
+                name="contact"
+                method="POST"
+                data-netlify="true"
+              >
+                <InputFieldWrapper>
+                  <Input name="name" placeholder="Naam" />
+                  <Input name="email" placeholder="E-mail" />
+                </InputFieldWrapper>
+                <TextArea name="message" placeholder="Bericht" />
+                <SendButton type="submit">Verzenden </SendButton>
+              </ContactForm>
+            </ContactFormWrapper>
           </Container>
         </ContactContainer>
       </>
@@ -60,7 +67,9 @@ const ContactInfo = styled(ScrollAnimation)`
   color: white;
   margin: 100px 0 50px 0;
 `
-const ContactForm = styled(ScrollAnimation)`
+const ContactFormWrapper = styled(ScrollAnimation)``
+
+const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
 `

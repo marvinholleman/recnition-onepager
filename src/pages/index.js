@@ -1,17 +1,12 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import { createGlobalStyle } from "styled-components"
 
 import PageWrapper from "../components/common/pagewrapper"
-
 import Loader from "../components/common/loader"
+import "../theme/index.css"
 
 import About from "./about"
-import AVG from "./AVG"
 import Contact from "./Contact"
 import Benefits from "./Benefits"
-import Partners from "./Partners"
 
 class IndexPage extends React.Component {
   state = {

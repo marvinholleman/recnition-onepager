@@ -1,9 +1,5 @@
 import React from "react"
-
 import styled from "styled-components"
-
-import Title from "../components/common/title"
-import ExplanationCircles from "../components/common/explanationCircles"
 
 class Partners extends React.Component {
   _scrolltTo(section) {
