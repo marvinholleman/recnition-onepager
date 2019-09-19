@@ -5,20 +5,32 @@ import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons"
 
+import "../theme/index.css"
+
 import Button from "../components/common/button"
 
 class Thanks extends React.Component {
   render() {
     return (
       <>
-        <ThanksContainer>
-          <TextContainer>
-            <ThanksIcon icon={faThumbsUp} color="white" size="3x" />
-            <HeaderText>
+        <ThanksContainer class="thanks-container">
+          <TextContainer class="text-container">
+            <ThanksIcon
+              class="thanks-icon"
+              icon={faThumbsUp}
+              color="white"
+              size="3x"
+            />
+            <HeaderText class="header-text">
               Bedankt voor het invullen van het formulier!
             </HeaderText>
-            <UnderText>We nemen zo spoedig mogelijk contact op.</UnderText>
-            <GoBackButton onClick={() => (window.location = "/")}>
+            <UnderText class="under-text">
+              We nemen zo spoedig mogelijk contact op.
+            </UnderText>
+            <GoBackButton
+              class="back-button"
+              onClick={() => (window.location = "/")}
+            >
               Ga terug
             </GoBackButton>
           </TextContainer>
