@@ -34,7 +34,6 @@ class Contact extends React.Component {
             <ContactFormWrapper animateIn="fadeInUp" animateOnce={true}>
               <ContactForm
                 data-netlify-recaptcha="true"
-                action="/thanks"
                 name="contact"
                 method="POST"
                 data-netlify="true"

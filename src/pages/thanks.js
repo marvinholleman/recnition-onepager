@@ -8,14 +8,6 @@ import { faThumbsUp } from "@fortawesome/free-solid-svg-icons"
 import Button from "../components/common/button"
 
 class Thanks extends React.Component {
-  _scrolltTo(section) {
-    window.scroll({
-      behavior: "smooth",
-      left: 0,
-      top: section,
-    })
-  }
-
   render() {
     return (
       <>

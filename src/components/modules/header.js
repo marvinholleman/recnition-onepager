@@ -10,10 +10,6 @@ import backgroundImage from "../../images/background1.png"
 import LogoImage from "../../images/logo_white.png"
 
 class Header extends Component {
-  state = {
-    imageLoaded: false,
-  }
-
   scrollTo() {
     window.scroll({
       behavior: "smooth",
@@ -28,10 +24,7 @@ class Header extends Component {
         <HeaderContainer>
           <HeroWrapper>
             <Hero>
-              <Logo
-                src={LogoImage}
-                onLoad={() => this.setState({ loaded: true })}
-              />
+              <Logo src={LogoImage} />
               <HeroTextContainer
                 animateIn="bounceInLeft"
                 animateOnce={true}
