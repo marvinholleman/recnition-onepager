@@ -36,7 +36,7 @@ class Contact extends React.Component {
                 data-netlify-recaptcha="true"
                 action="/thanks/"
                 name="contact"
-                method="POST"
+                method="post"
                 data-netlify="true"
               >
                 <InputFieldWrapper>
