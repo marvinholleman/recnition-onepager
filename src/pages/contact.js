@@ -31,16 +31,41 @@ class Contact extends React.Component {
                 Neem hier contact op.
               </Title>
             </ContactInfo>
-            <ContactFormWrapper animateIn="fadeInUp" animateOnce={true}>
-              <form name="contact" method="POST" data-netlify="true">
+            {/* <ContactFormWrapper animateIn="fadeInUp" animateOnce={true}>
+              <ContactForm
+                action="/thanks/"
+                name="contact"
+                method="post"
+                data-netlify="true"
+              >
                 <InputFieldWrapper>
-                  <Input type="text" name="name" placeholder="Naam" />
-                  <Input type="email" name="email" placeholder="E-mail" />
+                  <Input name="name" placeholder="Naam" />
+                  <Input name="email" placeholder="E-mail" />
                 </InputFieldWrapper>
                 <TextArea name="message" placeholder="Bericht" />
                 <SendButton type="submit">Verzenden </SendButton>
-              </form>
-            </ContactFormWrapper>
+              </ContactForm>
+            </ContactFormWrapper> */}
+            <form name="contact" method="POST" data-netlify="true">
+              <p>
+                <label>
+                  Your Name: <input type="text" name="name" />
+                </label>
+              </p>
+              <p>
+                <label>
+                  Your Email: <input type="email" name="email" />
+                </label>
+              </p>
+              <p>
+                <label>
+                  Message: <textarea name="message"></textarea>
+                </label>
+              </p>
+              <p>
+                <button type="submit">Send</button>
+              </p>
+            </form>
           </Container>
         </ContactContainer>
       </>
