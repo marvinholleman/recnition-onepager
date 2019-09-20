@@ -32,15 +32,10 @@ class Contact extends React.Component {
               </Title>
             </ContactInfo>
             <ContactFormWrapper animateIn="fadeInUp" animateOnce={true}>
-              <form
-                action="/thanks/"
-                name="contact"
-                method="post"
-                data-netlify="true"
-              >
+              <form name="contact" method="POST" data-netlify="true">
                 <InputFieldWrapper>
-                  <Input name="name" placeholder="Naam" />
-                  <Input name="email" placeholder="E-mail" />
+                  <Input type="text" name="name" placeholder="Naam" />
+                  <Input type="email" name="email" placeholder="E-mail" />
                 </InputFieldWrapper>
                 <TextArea name="message" placeholder="Bericht" />
                 <SendButton type="submit">Verzenden </SendButton>
