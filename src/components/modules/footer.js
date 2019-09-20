@@ -21,7 +21,7 @@ class Footer extends Component {
         <FooterContainer>
           <Container>
             <CopyrightText>
-              Copyright Recnition 2019 | All rights reserved
+              Copyright Recnition 2019 | All rights reserved.
             </CopyrightText>
           </Container>
           <ScrolltoTopButton onClick={e => this.scrollTo()}>
