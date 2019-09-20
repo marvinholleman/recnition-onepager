@@ -37,7 +37,6 @@ class Contact extends React.Component {
                 name="contact"
                 method="post"
                 data-netlify="true"
-                data-netlify-recaptcha="true"
               >
                 <InputFieldWrapper>
                   <Input type="hidden" value="contact" name="form-name" />
@@ -45,7 +44,6 @@ class Contact extends React.Component {
                   <Input name="email" placeholder="E-mail" />
                 </InputFieldWrapper>
                 <TextArea name="message" placeholder="Bericht" />
-                <RecaptchaContainer data-netlify-recaptcha="true" />
                 <SendButton type="submit">Verzenden </SendButton>
               </ContactForm>
             </ContactFormWrapper>
