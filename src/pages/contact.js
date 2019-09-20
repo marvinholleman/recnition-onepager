@@ -46,7 +46,7 @@ class Contact extends React.Component {
                 <SendButton type="submit">Verzenden </SendButton>
               </ContactForm>
             </ContactFormWrapper> */}
-            <form name="contact" method="POST" data-netlify="true">
+            <form name="contactss" method="POST" data-netlify="true">
               <p>
                 <label>
                   Your Name: <input type="text" name="name" />
