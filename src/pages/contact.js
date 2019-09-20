@@ -31,7 +31,7 @@ class Contact extends React.Component {
                 Neem hier contact op.
               </Title>
             </ContactInfo>
-            {/* <ContactFormWrapper animateIn="fadeInUp" animateOnce={true}>
+            <ContactFormWrapper animateIn="fadeInUp" animateOnce={true}>
               <ContactForm
                 action="/thanks/"
                 name="contact"
@@ -45,27 +45,7 @@ class Contact extends React.Component {
                 <TextArea name="message" placeholder="Bericht" />
                 <SendButton type="submit">Verzenden </SendButton>
               </ContactForm>
-            </ContactFormWrapper> */}
-            <form name="contactss" method="POST" data-netlify="true">
-              <p>
-                <label>
-                  Your Name: <input type="text" name="name" />
-                </label>
-              </p>
-              <p>
-                <label>
-                  Your Email: <input type="email" name="email" />
-                </label>
-              </p>
-              <p>
-                <label>
-                  Message: <textarea name="message"></textarea>
-                </label>
-              </p>
-              <p>
-                <button type="submit">Send</button>
-              </p>
-            </form>
+            </ContactFormWrapper>
           </Container>
         </ContactContainer>
       </>
