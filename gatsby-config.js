@@ -7,9 +7,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+
     {
       resolve: "gatsby-plugin-styled-components",
       options: {},
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_CODE || "none",
+      },
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
