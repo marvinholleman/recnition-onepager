@@ -32,7 +32,7 @@ class Contact extends React.Component {
               </Title>
             </ContactInfo>
             <ContactFormWrapper animateIn="fadeInUp" animateOnce={true}>
-              <ContactForm
+              <form
                 action="/thanks/"
                 name="contact"
                 method="post"
@@ -44,7 +44,7 @@ class Contact extends React.Component {
                 </InputFieldWrapper>
                 <TextArea name="message" placeholder="Bericht" />
                 <SendButton type="submit">Verzenden </SendButton>
-              </ContactForm>
+              </form>
             </ContactFormWrapper>
           </Container>
         </ContactContainer>
