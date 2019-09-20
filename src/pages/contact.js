@@ -37,8 +37,10 @@ class Contact extends React.Component {
                 name="contact"
                 method="post"
                 data-netlify="true"
+                data-netlify-recaptcha="true"
               >
                 <InputFieldWrapper>
+                  <Input type="hidden" value="contact" name="form-name" />
                   <Input name="name" placeholder="Naam" />
                   <Input name="email" placeholder="E-mail" />
                 </InputFieldWrapper>
