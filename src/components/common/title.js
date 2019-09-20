@@ -23,12 +23,12 @@ const TitleElement = styled.h1`
   line-height: 1.2;
   color: #2c2d31;
   margin: 0 auto;
-  width: ${props => props.width}
-    ${props =>
-      props.light &&
-      css`
-        color: white;
-      `};
+  width: ${props => props.width};
+  ${props =>
+    props.light &&
+    css`
+      color: white;
+    `};
 `
 
 Title.propTypes = {}
