@@ -13,13 +13,17 @@ import { throws } from "assert"
 class Contact extends React.Component {
   state = {
     name: "",
+    organisation: "",
     email: "",
+    phone: "",
     message: "",
     value: "",
     disabled: true,
 
     nameError: "",
     emailError: "",
+    organisationError: "",
+    phoneError: "",
     messageError: "",
   }
 
@@ -37,9 +41,21 @@ class Contact extends React.Component {
     })
   }
 
+  handleOrganisationChange = event => {
+    this.setState({ organisation: event.target.value }, () => {
+      this.validateOrganisation()
+    })
+  }
+
   handleEmailChange = event => {
     this.setState({ email: event.target.value }, () => {
       this.validateEmail()
+    })
+  }
+
+  handlePhoneChange = event => {
+    this.setState({ phone: event.target.value }, () => {
+      this.validatePhone()
     })
   }
 
@@ -54,6 +70,16 @@ class Contact extends React.Component {
     this.setState({
       nameError:
         name.length > 3 ? null : "Naam moet langer zijn dan 3 karakters",
+    })
+  }
+
+  validateOrganisation = () => {
+    const { organisation } = this.state
+    this.setState({
+      organisationError:
+        organisation.length > 3
+          ? null
+          : "Organisatienaam moet langer zijn dan 3 karakters",
     })
   }
 
@@ -72,16 +98,19 @@ class Contact extends React.Component {
     }
   }
 
+  validatePhone = () => {
+    const { phone } = this.state
+    this.setState({
+      phoneError:
+        phone.length > 10 ? null : "Dit is geen valide telefoonnummer",
+    })
+  }
+
   validateMessage = () => {
     const { message } = this.state
     this.setState({
       messageError: message.length > 0 ? null : "Bericht kan niet leeg zijn",
     })
-  }
-
-  handleSubmit = event => {
-    event.preventDefault()
-    const { name, email } = this.state
   }
 
   render() {
@@ -91,7 +120,7 @@ class Contact extends React.Component {
           <Container>
             <ContactInfo animateIn="fadeInUp" animateOnce={true}>
               <Title light width={800}>
-                Heb je een vraag of wil je meer informatie?
+                Vraag een vrijblijvend adviesgesprek aan.
               </Title>
               <Title light nomargin width={800}>
                 Neem hier contact op.
@@ -119,6 +148,22 @@ class Contact extends React.Component {
                   </InputContainer>
                   <InputContainer>
                     <Input
+                      name="organisation"
+                      placeholder="Organisatie"
+                      type="text"
+                      value={this.state.organisation}
+                      onChange={this.handleOrganisationChange}
+                      onBlur={this.validateOrganisation}
+                      error={this.state.organisationError}
+                    />
+                    <ValidationError>
+                      {this.state.organisationError}
+                    </ValidationError>
+                  </InputContainer>
+                </InputFieldWrapper>
+                <InputFieldWrapper>
+                  <InputContainer>
+                    <Input
                       name="email"
                       placeholder="E-mail"
                       type="email"
@@ -129,10 +174,22 @@ class Contact extends React.Component {
                     />
                     <ValidationError>{this.state.emailError}</ValidationError>
                   </InputContainer>
+                  <InputContainer>
+                    <Input
+                      name="phone"
+                      placeholder="Telefoonnummer"
+                      type="number"
+                      value={this.state.phone}
+                      onChange={this.handlePhoneChange}
+                      onBlur={this.validatePhone}
+                      error={this.state.phoneError}
+                    />
+                    <ValidationError>{this.state.phoneError}</ValidationError>
+                  </InputContainer>
                 </InputFieldWrapper>
                 <TextArea
                   name="message"
-                  placeholder="Bericht"
+                  placeholder="Vraag / Opmerking"
                   value={this.state.message}
                   onChange={this.handleMessageChange}
                   onBlur={this.validateMessage}
@@ -201,6 +258,7 @@ const Input = styled.input`
   color: #2c2d31;
   font-family: "Poppins";
   font-size: 15px;
+  margin: 8px 0px;
 
   :focus {
     outline: none;
