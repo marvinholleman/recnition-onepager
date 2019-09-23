@@ -101,8 +101,7 @@ class Contact extends React.Component {
   validatePhone = () => {
     const { phone } = this.state
     this.setState({
-      phoneError:
-        phone.length > 10 ? null : "Dit is geen valide telefoonnummer",
+      phoneError: phone.length > 9 ? null : "Dit is geen valide telefoonnummer",
     })
   }
 
