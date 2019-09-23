@@ -32,11 +32,13 @@
 .header-text {
   color: white;
   font-size: 24px;
+  text-align: center;
 }
 
 .under-text {
   color: white;
   font-size: 18px;
+  text-align: center;
 }
 
 .back-button {
