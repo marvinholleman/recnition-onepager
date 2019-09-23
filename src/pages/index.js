@@ -16,7 +16,7 @@ class IndexPage extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ loading: false })
-    }, 2000)
+    }, 1000)
   }
 
   render() {

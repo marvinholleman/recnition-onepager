@@ -6,7 +6,7 @@ import ScrollAnimation from "react-animate-on-scroll"
 import "animate.css/animate.min.css"
 
 import Button from "../common/button"
-import backgroundImage from "../../images/background1.png"
+import backgroundImage from "../../images/background.jpg"
 import LogoImage from "../../images/logo_white.png"
 
 class Header extends Component {
