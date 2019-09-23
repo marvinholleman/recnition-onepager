@@ -61,16 +61,19 @@ const HeaderText = styled.h1`
   color: white;
   font-size: 24px;
   font-family: "Poppins";
+  text-align: center;
 `
 
 const UnderText = styled.h2`
   color: white;
   font-size: 18px;
   font-family: "Poppins";
+  text-align: center;
 `
 
 const ThanksIcon = styled(FontAwesomeIcon)`
   margin-bottom: 20px;
+  max-width: 100px;
 `
 
 const GoBackButton = styled(Button)`

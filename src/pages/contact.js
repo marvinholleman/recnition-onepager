@@ -119,10 +119,7 @@ class Contact extends React.Component {
           <Container>
             <ContactInfo animateIn="fadeInUp" animateOnce={true}>
               <Title light width={800}>
-                Vraag een vrijblijvend adviesgesprek aan.
-              </Title>
-              <Title light nomargin width={800}>
-                Neem hier contact op.
+                Vraag hier een vrijblijvend adviesgesprek aan.
               </Title>
             </ContactInfo>
             <ContactFormWrapper animateIn="fadeInUp" animateOnce={true}>
