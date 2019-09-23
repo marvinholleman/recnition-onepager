@@ -7,7 +7,7 @@ import "animate.css/animate.min.css"
 
 import Button from "../common/button"
 import backgroundImage from "../../images/background.jpg"
-import LogoImage from "../../images/logo_white.png"
+import LogoImage from "../../images/svg/logo_white.svg"
 
 class Header extends Component {
   state = {
