@@ -30,6 +30,10 @@ const ButtonElement = styled.button`
       color: black;
     }
   }
+
+  &:focus {
+    outline: none;
+  }
 `
 
 Button.propTypes = {}

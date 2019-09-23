@@ -24,7 +24,7 @@ class Header extends Component {
     window.scroll({
       behavior: "smooth",
       left: 0,
-      top: 4300,
+      top: window.innerHeight + 50,
     })
   }
 
@@ -49,7 +49,7 @@ class Header extends Component {
                   delay={1600}
                 >
                   <MoreButton onClick={e => this.scrollTo()}>
-                    Meer informatie?
+                    Meer info
                   </MoreButton>
                 </ButtonContainer>
               </HeroTextContainer>
@@ -125,6 +125,9 @@ const MoreButton = styled(Button)`
   background-color: white;
   color: black;
   position: relative;
+  font-family: "Poppins";
+  font-weight: 800;
+  padding: 10px 50px;
 `
 
 Header.propTypes = {}

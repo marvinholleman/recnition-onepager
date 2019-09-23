@@ -25,8 +25,8 @@ class IndexPage extends React.Component {
     ) : (
       <>
         <PageWrapper>
-          <About />
           <Benefits />
+          <About />
           <Contact />
         </PageWrapper>
       </>
