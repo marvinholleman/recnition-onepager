@@ -1,21 +1,87 @@
 import React from "react"
-
-import styled from "styled-components"
+import styled, { css } from "styled-components"
+import ScrollAnimation from "react-animate-on-scroll"
 
 import Container from "../components/common/container"
 import Button from "../components/common/button"
 import Title from "../components/common/title"
 
-import ScrollAnimation from "react-animate-on-scroll"
 import "animate.css/animate.min.css"
+import { runInThisContext } from "vm"
+import { throws } from "assert"
 
 class Contact extends React.Component {
+  state = {
+    name: "",
+    email: "",
+    message: "",
+    value: "",
+    disabled: true,
+
+    nameError: "",
+    emailError: "",
+    messageError: "",
+  }
+
   _scrolltTo(section) {
     window.scroll({
       behavior: "smooth",
       left: 0,
       top: section,
     })
+  }
+
+  handleNameChange = event => {
+    this.setState({ name: event.target.value }, () => {
+      this.validateName()
+    })
+  }
+
+  handleEmailChange = event => {
+    this.setState({ email: event.target.value }, () => {
+      this.validateEmail()
+    })
+  }
+
+  handleMessageChange = event => {
+    this.setState({ message: event.target.value }, () => {
+      this.validateMessage()
+    })
+  }
+
+  validateName = () => {
+    const { name } = this.state
+    this.setState({
+      nameError:
+        name.length > 3 ? null : "Naam moet langer zijn dan 3 karakters",
+    })
+  }
+
+  validateEmail = () => {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    const { email } = this.state
+
+    if (re.test(email)) {
+      this.setState({
+        emailError: null,
+      })
+    } else {
+      this.setState({
+        emailError: "Dit is geen valide e-mail adres",
+      })
+    }
+  }
+
+  validateMessage = () => {
+    const { message } = this.state
+    this.setState({
+      messageError: message.length > 0 ? null : "Bericht kan niet leeg zijn",
+    })
+  }
+
+  handleSubmit = event => {
+    event.preventDefault()
+    const { name, email } = this.state
   }
 
   render() {
@@ -40,11 +106,52 @@ class Contact extends React.Component {
               >
                 <InputFieldWrapper>
                   <Input type="hidden" value="contact" name="form-name" />
-                  <Input name="name" placeholder="Naam" />
-                  <Input name="email" placeholder="E-mail" />
+                  <InputContainer>
+                    <Input
+                      name="name"
+                      placeholder="Naam"
+                      value={this.state.name}
+                      onChange={this.handleNameChange}
+                      onBlur={this.validateName}
+                      error={this.state.nameError}
+                    />
+                    <ValidationError>{this.state.nameError}</ValidationError>
+                  </InputContainer>
+                  <InputContainer>
+                    <Input
+                      name="email"
+                      placeholder="E-mail"
+                      type="email"
+                      value={this.state.email}
+                      onChange={this.handleEmailChange}
+                      onBlur={this.validateEmail}
+                      error={this.state.emailError}
+                    />
+                    <ValidationError>{this.state.emailError}</ValidationError>
+                  </InputContainer>
                 </InputFieldWrapper>
-                <TextArea name="message" placeholder="Bericht" />
-                <SendButton type="submit">Verzenden </SendButton>
+                <TextArea
+                  name="message"
+                  placeholder="Bericht"
+                  value={this.state.message}
+                  onChange={this.handleMessageChange}
+                  onBlur={this.validateMessage}
+                  error={this.state.messageError}
+                />
+                <ValidationError>{this.state.messageError}</ValidationError>
+                <SendButton
+                  type="submit"
+                  disabled={
+                    !this.state.name ||
+                    !this.state.email ||
+                    !this.state.message ||
+                    this.state.messageError ||
+                    this.state.nameError ||
+                    this.state.emailError
+                  }
+                >
+                  Verzenden{" "}
+                </SendButton>
               </ContactForm>
             </ContactFormWrapper>
           </Container>
@@ -86,7 +193,6 @@ const InputFieldWrapper = styled.div`
 `
 
 const Input = styled.input`
-  width: 49%;
   height: 50px;
   padding: 0 10px;
   background-color: #adadad;
@@ -95,6 +201,16 @@ const Input = styled.input`
   color: #2c2d31;
   font-family: "Poppins";
   font-size: 15px;
+
+  :focus {
+    outline: none;
+  }
+
+  ${props =>
+    props.error &&
+    css`
+      border: 1px solid red;
+    `}
 `
 const TextArea = styled.textarea`
   width: 100%;
@@ -107,6 +223,16 @@ const TextArea = styled.textarea`
   color: #2c2d31;
   font-family: "Poppins";
   font-size: 15px;
+
+  ${props =>
+    props.error &&
+    css`
+      border: 1px solid red;
+    `}
+
+  :focus {
+    outline: none;
+  }
 `
 
 const SendButton = styled(Button)`
@@ -115,12 +241,22 @@ const SendButton = styled(Button)`
   width: 175px;
   align-self: flex-end;
   right: 50px;
-  bottom: 20px;
-  position: relative;
 
   @media (min-width: 320px) and (max-width: 480px) {
     right: 0px;
   }
+`
+
+const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+`
+
+const ValidationError = styled.div`
+  color: red;
+  font-family: "Poppins";
+  font-size: 15px;
 `
 
 const RecaptchaContainer = styled.div``
