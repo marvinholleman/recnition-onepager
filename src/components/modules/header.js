@@ -10,6 +10,16 @@ import backgroundImage from "../../images/background.jpg"
 import LogoImage from "../../images/logo_white.png"
 
 class Header extends Component {
+  state = {
+    backgroundImage: "",
+  }
+
+  componentDidMount() {
+    this.setState({
+      backgroundImage: (new Image().src = backgroundImage),
+    })
+  }
+
   scrollTo() {
     window.scroll({
       behavior: "smooth",
@@ -23,7 +33,7 @@ class Header extends Component {
       <>
         <HeaderContainer>
           <HeroWrapper>
-            <Hero>
+            <Hero backgroundImage={this.state.backgroundImage}>
               <Logo src={LogoImage} />
               <HeroTextContainer
                 animateIn="bounceInLeft"
@@ -64,7 +74,7 @@ const HeroWrapper = styled.div`
 `
 
 const Hero = styled.div`
-  background-image: url(${backgroundImage});
+  background-image: url('${props => props.backgroundImage}');
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
