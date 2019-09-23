@@ -46,7 +46,7 @@ class Header extends Component {
                 <ButtonContainer
                   animateIn="bounceInLeft"
                   animateOnce={true}
-                  delay={1600}
+                  delay={1200}
                 >
                   <MoreButton onClick={e => this.scrollTo()}>
                     Meer info
