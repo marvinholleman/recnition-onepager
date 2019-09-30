@@ -36,7 +36,7 @@ class IndexPage extends React.Component {
           </DetailButtonWrapper>
         </SideWrapper>
         <SideWrapper href="/retail">
-          <RetailBackground backgroundImage={this.state.horecaImage} />
+          <RetailBackground backgroundImage={this.state.retailImage} />
           <DetailButtonWrapper>
             <DetailButton src={RetailLogo} />
           </DetailButtonWrapper>
