@@ -24,7 +24,7 @@ class Header extends Component {
     window.scroll({
       behavior: "smooth",
       left: 0,
-      top: window.innerHeight + 50,
+      top: window.innerHeight - 25,
     })
   }
 
@@ -34,22 +34,22 @@ class Header extends Component {
         <HeaderContainer>
           <HeroWrapper>
             <Hero backgroundImage={this.state.backgroundImage}>
-              <Logo src={LogoImage} />
+              <LogoWrapper href="/">
+                <Logo src={LogoImage} />
+              </LogoWrapper>
               <HeroTextContainer
                 animateIn="bounceInLeft"
                 animateOnce={true}
                 delay={1000}
               >
-                <HeroText>
-                  Direct op de hoogte van winkeldieven en overlastplegers.
-                </HeroText>
+                <HeroText>{this.props.heroText}</HeroText>
                 <ButtonContainer
                   animateIn="bounceInLeft"
                   animateOnce={true}
                   delay={1200}
                 >
                   <MoreButton onClick={e => this.scrollTo()}>
-                    Meer info
+                    {this.props.herobuttonText}
                   </MoreButton>
                 </ButtonContainer>
               </HeroTextContainer>
@@ -86,6 +86,8 @@ const Hero = styled.div`
     background-position-x: 60%;
   }
 `
+
+const LogoWrapper = styled.a``
 
 const Logo = styled.img`
   height: 75px;

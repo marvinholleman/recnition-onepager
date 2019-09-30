@@ -2,9 +2,9 @@ import React from "react"
 import styled, { css } from "styled-components"
 import ScrollAnimation from "react-animate-on-scroll"
 
-import Container from "../components/common/container"
-import Button from "../components/common/button"
-import Title from "../components/common/title"
+import Container from "../../components/common/container"
+import Button from "../../components/common/button"
+import Title from "../../components/common/title"
 
 import "animate.css/animate.min.css"
 import { runInThisContext } from "vm"
@@ -125,12 +125,16 @@ class Contact extends React.Component {
             <ContactFormWrapper animateIn="fadeInUp" animateOnce={true}>
               <ContactForm
                 action="/thanks/"
-                name="contact"
+                name="contact-horeca"
                 method="post"
                 data-netlify="true"
               >
                 <InputFieldWrapper>
-                  <Input type="hidden" value="contact" name="form-name" />
+                  <Input
+                    type="hidden"
+                    value="contact-horeca"
+                    name="form-name"
+                  />
                   <InputContainer>
                     <Input
                       name="name"
@@ -295,6 +299,7 @@ const SendButton = styled(Button)`
   width: 175px;
   align-self: flex-end;
   right: 50px;
+  margin-top: 20px;
 
   @media (min-width: 320px) and (max-width: 480px) {
     right: 0px;

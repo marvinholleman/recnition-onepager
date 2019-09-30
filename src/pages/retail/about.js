@@ -3,10 +3,10 @@ import styled from "styled-components"
 import ScrollAnimation from "react-animate-on-scroll"
 import "animate.css/animate.min.css"
 
-import Ban from "../images/svg/ban.svg"
-import Upload from "../images/svg/upload.svg"
-import Recognize from "../images/svg/recognize.svg"
-import Alert from "../images/svg/alert.svg"
+import Ban from "../../images/svg/ban.svg"
+import Upload from "../../images/svg/upload.svg"
+import Recognize from "../../images/svg/recognize.svg"
+import Alert from "../../images/svg/alert.svg"
 
 class About extends React.Component {
   _scrolltTo(section) {

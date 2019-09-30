@@ -11,9 +11,6 @@ import {
 import ScrollAnimation from "react-animate-on-scroll"
 import "animate.css/animate.min.css"
 
-import Title from "../components/common/title"
-import ExplanationCircles from "../components/common/explanationCircles"
-
 class Benefits extends React.Component {
   render() {
     return (
@@ -32,8 +29,7 @@ class Benefits extends React.Component {
               <BenefitIcon icon={faLock} color="white" size="3x" />
               <BenefitTitle>Minder diefstal en meer veiligheid.</BenefitTitle>
               <BenefitDescription>
-                Het systeem herkent dieven en overlast plegers binnen een
-                collectief.
+                Het systeem herkent overlast plegers binnen een collectief.
               </BenefitDescription>
             </BenefitBlock>
           </ContentContainer>
@@ -51,8 +47,7 @@ class Benefits extends React.Component {
               <BenefitTitle>Gebruiksvriendelijke app.</BenefitTitle>
               <BenefitDescription>
                 Door een gebruiksvriendelijke applicatie wordt het personeel of
-                de beveiliging direct op de hoogte gesteld van winkeldieven en
-                overlast plegers.
+                de beveiliging direct op de hoogte gesteld van overlast plegers.
               </BenefitDescription>
             </BenefitBlock>
           </ContentContainer>
