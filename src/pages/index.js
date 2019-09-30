@@ -50,6 +50,10 @@ const WelcomeWrapper = styled.div`
   display: flex;
   height: 100vh;
   width: 100%;
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    flex-direction: column;
+  }
 `
 
 const SideWrapper = styled.a`
@@ -59,6 +63,10 @@ const SideWrapper = styled.a`
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    height: 100%;
   }
 `
 
@@ -105,6 +113,11 @@ const DetailButtonWrapper = styled.div`
 
   ${SideWrapper}:hover & {
     transform: scale(1.1);
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    width: 180px;
+    height: 180px;
   }
 `
 
