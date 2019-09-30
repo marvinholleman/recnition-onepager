@@ -15,6 +15,10 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount() {
+    this.setState({
+      horecaImage: (new Image().src = horecaImage),
+      retailImage: (new Image().src = retailImage),
+    })
     setTimeout(() => {
       this.setState({ loading: false })
     }, 2000)
@@ -26,13 +30,13 @@ class IndexPage extends React.Component {
     ) : (
       <WelcomeWrapper>
         <SideWrapper href="/horeca">
-          <HorecaBackground />
+          <HorecaBackground backgroundImage={this.state.horecaImage} />
           <DetailButtonWrapper>
             <DetailButton src={HorecaLogo} />
           </DetailButtonWrapper>
         </SideWrapper>
         <SideWrapper href="/retail">
-          <RetailBackground />
+          <RetailBackground backgroundImage={this.state.horecaImage} />
           <DetailButtonWrapper>
             <DetailButton src={RetailLogo} />
           </DetailButtonWrapper>
@@ -59,7 +63,7 @@ const SideWrapper = styled.a`
 `
 
 const HorecaBackground = styled.div`
-    background-image: url('${horecaImage}');
+ background-image: url('${props => props.backgroundImage}');
     background-size: cover;
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
@@ -73,7 +77,7 @@ const HorecaBackground = styled.div`
 `
 
 const RetailBackground = styled.div`
-    background-image: url('${retailImage}');
+    background-image: url('${props => props.backgroundImage}');
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
     background-size: cover;
