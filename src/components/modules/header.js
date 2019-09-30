@@ -85,6 +85,10 @@ const Hero = styled.div`
   @media (min-width: 320px) and (max-width: 480px) {
     background-position-x: 60%;
   }
+
+  @media (min-width: 480px) and (max-width: 1024px) {
+    background-position-x: 60%;
+  }
 `
 
 const LogoWrapper = styled.a``
@@ -99,10 +103,17 @@ const Logo = styled.img`
 const HeroTextContainer = styled(ScrollAnimation)`
   display: flex;
   flex-direction: column;
+  right: 80px;
+  position: relative;
 
   @media (min-width: 320px) and (max-width: 480px) {
     position: relative;
-    right: 80px;
+    right: 75px;
+  }
+
+  @media (min-width: 480px) and (max-width: 710px) {
+    position: relative;
+    right: 30px;
   }
 `
 
@@ -116,6 +127,11 @@ const HeroText = styled.h1`
   letter-spacing: 1.5px;
   line-height: 133%;
   font-weight: 400;
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    max-width: 270px;
+    font-size: 23px;
+  }
 `
 
 const ButtonContainer = styled(ScrollAnimation)`
