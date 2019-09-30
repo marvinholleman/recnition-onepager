@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 import horecaImage from "../images/horecaBackground.jpg"
 import retailImage from "../images/retailBackground.jpg"
+import Loader from "../components/common/loader"
 
 import HorecaLogo from "../images/svg/logo_black_horeca.svg"
 import RetailLogo from "../images/svg/logo_black_detailhandel.svg"
@@ -16,11 +17,13 @@ class IndexPage extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ loading: false })
-    }, 1000)
+    }, 2000)
   }
 
   render() {
-    return (
+    return this.state.loading ? (
+      <Loader />
+    ) : (
       <WelcomeWrapper>
         <SideWrapper href="/horeca">
           <HorecaBackground />
