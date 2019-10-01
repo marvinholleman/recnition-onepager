@@ -74,7 +74,7 @@ const HeroWrapper = styled.div`
 `
 
 const Hero = styled.div`
-  background-image: url('${props => props.backgroundImage}');
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('${props => props.backgroundImage}');
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
@@ -103,7 +103,6 @@ const Logo = styled.img`
 const HeroTextContainer = styled(ScrollAnimation)`
   display: flex;
   flex-direction: column;
-  right: 80px;
   position: relative;
 
   @media (min-width: 320px) and (max-width: 480px) {

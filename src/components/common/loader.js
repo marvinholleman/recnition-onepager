@@ -22,7 +22,7 @@ class Loader extends React.Component {
     //   scale: 0.5,
     //   opacity: 0,
     // })
-    var tl = new TimelineMax({ repeat: 3 })
+    var tl = new TimelineMax({ repeat: 10 })
     tl.to(this.loadingElement, 0.5, { alpha: 0 }).to(this.loadingElement, 0.5, {
       alpha: 1,
     })
@@ -36,7 +36,7 @@ class Loader extends React.Component {
       //   </LogoContainer>
       //   <LoadingElement ref={div => (this.loadingElement = div)} />
       // </LoaderContainer>
-      <LoaderContainer class="loader-container">
+      <LoaderContainer className="loader-container">
         <LoaderDot src={Loading} ref={img => (this.loadingElement = img)} />
       </LoaderContainer>
     )

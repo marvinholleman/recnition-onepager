@@ -12,21 +12,58 @@ import "../theme/index.css"
 class IndexPage extends React.Component {
   state = {
     loading: true,
+    loadedImagesCount: 0
   }
 
-  componentDidMount() {
-    this.setState({
-      horecaImage: (new Image().src = horecaImage),
-      retailImage: (new Image().src = retailImage),
+  constructor() {
+    super();
+    console.log('Initialising IndexPage');
+  }
+
+  imageLoaded() {
+    const imageCount = 2; // Use array of images instead of hardcoding
+
+    this.setState(prevState => {
+       return {loadedImagesCount: prevState.loadedImagesCount + 1}
+    }, () => { 
+      if (this.state.loadedImagesCount >= imageCount) {
+        this.setState({
+          loading: false
+        })
+      }
+      console.log('Loaded images count: ', this.state.loadedImagesCount);
     })
-    setTimeout(() => {
-      this.setState({ loading: false })
-    }, 2000)
+  }
+
+  handleHorecaLoaded() {
+    this.setState({
+      horecaImage: (new Image().src = horecaImage)
+    })
+    console.log('Loaded horeca image');
+    this.imageLoaded();
+  }
+
+  handleRetailLoaded() {
+    this.setState({
+      retailImage: (new Image().src = retailImage)
+    })
+    console.log('Loaded retail image');
+    this.imageLoaded();
   }
 
   render() {
     return this.state.loading ? (
-      <Loader />
+      <div>
+        <Loader/>
+        <img
+          src={new Image().src = horecaImage}
+          onLoad={this.handleHorecaLoaded.bind(this)}
+        />
+        <img
+          src={new Image().src = retailImage}
+          onLoad={this.handleRetailLoaded.bind(this)}
+        />
+      </div>
     ) : (
       <WelcomeWrapper>
         <SideWrapper href="/horeca">
