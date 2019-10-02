@@ -117,6 +117,9 @@ const HeroTextContainer = styled(ScrollAnimation)`
 `
 
 const HeroText = styled.h1`
+  background: #00000069;
+  padding: 20px;
+  border-radius: 15px;
   color: #dfdfdf;
   font-family: "Poppins";
   top: 275px;
