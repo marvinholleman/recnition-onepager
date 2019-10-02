@@ -21,7 +21,7 @@ class IndexPage extends React.Component {
   }
 
   imageLoaded() {
-    const imageCount = 2; // Use array of images instead of hardcoding
+    const imageCount = 4; // Use x2 due to onLoad firing twice (1st time happens on initialisation)
 
     this.setState(prevState => {
        return {loadedImagesCount: prevState.loadedImagesCount + 1}
@@ -35,24 +35,21 @@ class IndexPage extends React.Component {
     })
   }
 
+
   handleHorecaLoaded() {
-    if (!this.state.horecaImage) {
-      this.setState({
-        horecaImage: HorecaImage
-      })
-      console.log('Loaded horeca image');
-      this.imageLoaded();
-    }
+    this.setState({
+      horecaImage: HorecaImage
+    })
+    console.log('Loaded horeca image');
+    this.imageLoaded();
   }
 
   handleRetailLoaded() {
-    if (!this.state.retailImage) {
-      this.setState({
-        retailImage: RetailImage
-      })
-      console.log('Loaded retail image');
-      this.imageLoaded();
-    }
+    this.setState({
+      retailImage: RetailImage
+    })
+    console.log('Loaded retail image');
+    this.imageLoaded();
   }
 
   render() {
