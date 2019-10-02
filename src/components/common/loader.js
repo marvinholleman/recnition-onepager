@@ -22,7 +22,7 @@ class Loader extends React.Component {
     //   scale: 0.5,
     //   opacity: 0,
     // })
-    var tl = new TimelineMax({ repeat: 10 })
+    var tl = new TimelineMax({ repeat: -1 })
     tl.to(this.loadingElement, 0.5, { alpha: 0 }).to(this.loadingElement, 0.5, {
       alpha: 1,
     })

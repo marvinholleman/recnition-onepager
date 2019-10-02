@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
-import horecaImage from "../images/horecaBackground.jpg"
-import retailImage from "../images/retailBackground.jpg"
+import HorecaImage from "../images/horecaBackground.jpg"
+import RetailImage from "../images/retailBackground.jpg"
 import Loader from "../components/common/loader"
 
 import HorecaLogo from "../images/svg/logo_black_horeca.svg"
@@ -36,19 +36,23 @@ class IndexPage extends React.Component {
   }
 
   handleHorecaLoaded() {
-    this.setState({
-      horecaImage: (new Image().src = horecaImage)
-    })
-    console.log('Loaded horeca image');
-    this.imageLoaded();
+    if (!this.state.horecaImage) {
+      this.setState({
+        horecaImage: HorecaImage
+      })
+      console.log('Loaded horeca image');
+      this.imageLoaded();
+    }
   }
 
   handleRetailLoaded() {
-    this.setState({
-      retailImage: (new Image().src = retailImage)
-    })
-    console.log('Loaded retail image');
-    this.imageLoaded();
+    if (!this.state.retailImage) {
+      this.setState({
+        retailImage: RetailImage
+      })
+      console.log('Loaded retail image');
+      this.imageLoaded();
+    }
   }
 
   render() {
@@ -56,12 +60,12 @@ class IndexPage extends React.Component {
       <div>
         <Loader/>
         <img
-          src={new Image().src = horecaImage}
-          onLoad={this.handleHorecaLoaded.bind(this)}
+          src={ HorecaImage }
+          onLoad={this.handleHorecaLoaded()}
         />
         <img
-          src={new Image().src = retailImage}
-          onLoad={this.handleRetailLoaded.bind(this)}
+          src={ RetailImage }
+          onLoad={this.handleRetailLoaded()}
         />
       </div>
     ) : (
