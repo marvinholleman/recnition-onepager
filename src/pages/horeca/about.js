@@ -3,18 +3,12 @@ import styled from "styled-components"
 import ScrollAnimation from "react-animate-on-scroll"
 import "animate.css/animate.min.css"
 
-import Ban from "../../images/svg/ban.svg"
-import Upload from "../../images/svg/upload.svg"
-import Recognize from "../../images/svg/recognize.svg"
-import Alert from "../../images/svg/alert.svg"
-import { toHtml } from "@fortawesome/fontawesome-svg-core"
+import Entry from "../../images/svg/horeca_cartoon01.svg"
+import Save from "../../images/svg/horeca_cartoon02.svg"
+import Gallery from "../../images/svg/horeca_cartoon03.svg"
+import Match from "../../images/svg/horeca_cartoon04.svg"
 
 class About extends React.Component {
-  state = {
-    source:
-      "https://www.youtube.com/embed/EALBc_fpS4U?modestbranding=1;controls=0;showinfo=0;rel=0;fs=1;",
-  }
-
   _scrolltTo(section) {
     window.scroll({
       behavior: "smooth",
@@ -23,28 +17,37 @@ class About extends React.Component {
     })
   }
 
-  addAutoPlay() {
-    this.setState({
-      source:
-        "https://www.youtube.com/embed/EALBc_fpS4U?modestbranding=1;controls=0;showinfo=0;rel=0;fs=1;autoplay=1;",
-    })
-  }
-
   render() {
     return (
       <AboutContainer>
-        <ContentWrapper>
-          <IframeWrapper>
-            <Iframe
-              width="560"
-              height="315"
-              src={this.state.source}
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            />
-          </IframeWrapper>
-        </ContentWrapper>
+        <ContentContainer animateIn="fadeInRight" animateOnce={true}>
+          <DescriptionContainer>
+            <DescriptionImage src={Entry} />
+            <Description>
+              1. Bij betreden van de horecagelegenheidwordt er een foto gemaakt.
+            </Description>
+          </DescriptionContainer>
+          <DescriptionContainer>
+            <DescriptionImage src={Save} />
+            <Description>
+              2. Het gezicht wordt voor 12 uur opgeslagen.
+            </Description>
+          </DescriptionContainer>
+        </ContentContainer>
+        <ContentContainer animateIn="fadeInLeft" animateOnce={true}>
+          <DescriptionContainer>
+            <DescriptionImage src={Gallery} />
+            <Description>
+              3. Voeg ongewensten toe aan de collectie.
+            </Description>
+          </DescriptionContainer>
+          <DescriptionContainer>
+            <DescriptionImage src={Match} />
+            <Description>
+              4. Bij opnieuw betreden worden ongewensten direct herkend.
+            </Description>
+          </DescriptionContainer>
+        </ContentContainer>
       </AboutContainer>
     )
   }
@@ -55,28 +58,15 @@ const AboutContainer = styled.div`
   width: 100%;
   background-color: #2c2d31;
   flex-direction: column;
-  padding: 100px 0;
+  align-items: center;
+  padding: 75px 0;
 `
 
-const IframeWrapper = styled.div`
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-`
-
-const Iframe = styled.iframe`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-`
-
-const ContentWrapper = styled.div`
-  margin: 0 auto;
-  width: 60%;
+const ContentContainer = styled(ScrollAnimation)`
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  flex-flow: wrap;
 `
 
 const DescriptionContainer = styled.div`

@@ -16,6 +16,9 @@ const PageWrapper = props => (
       herobuttonText={
         props.type === "retail" ? "Meer informatie" : "Bekijk de video"
       }
+      targetGroup={ 
+        props.type 
+      }
     />
     {props.children}
     <Footer />

@@ -4,6 +4,7 @@ import PageWrapper from "../components/common/pagewrapper"
 import Loader from "../components/common/loader"
 import "../theme/index.css"
 
+import Video from "./retail/video"
 import About from "./retail/about"
 import Contact from "./retail/contact"
 import Benefits from "./retail/benefits"
@@ -25,6 +26,7 @@ class RetailPage extends React.Component {
     ) : (
       <>
         <PageWrapper type="retail">
+          <Video />
           <About />
           <Benefits />
           <Contact />

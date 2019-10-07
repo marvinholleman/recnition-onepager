@@ -6,7 +6,8 @@ import ScrollAnimation from "react-animate-on-scroll"
 import "animate.css/animate.min.css"
 
 import Button from "../common/button"
-import backgroundImage from "../../images/background.jpg"
+import horecaHero from "../../images/horecaHero.jpg"
+import retailHero from "../../images/retailHero.jpg"
 import LogoImage from "../../images/svg/logo_white.svg"
 
 class Header extends Component {
@@ -15,8 +16,13 @@ class Header extends Component {
   }
 
   componentDidMount() {
+    let bg = '';
+    if (this.props.targetGroup == 'horeca') {
+      bg = horecaHero;
+    } else { bg = retailHero }
+
     this.setState({
-      backgroundImage: (new Image().src = backgroundImage),
+      backgroundImage: (new Image().src = bg ),
     })
   }
 
@@ -24,7 +30,7 @@ class Header extends Component {
     window.scroll({
       behavior: "smooth",
       left: 0,
-      top: window.innerHeight - 25,
+      top: window.innerHeight,
     })
   }
 

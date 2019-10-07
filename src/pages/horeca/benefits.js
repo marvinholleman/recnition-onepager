@@ -27,9 +27,9 @@ class Benefits extends React.Component {
             </BenefitBlock>
             <BenefitBlock>
               <BenefitIcon icon={faLock} color="white" size="3x" />
-              <BenefitTitle>Minder diefstal en meer veiligheid.</BenefitTitle>
+              <BenefitTitle>Minder criminaliteit en overlast.</BenefitTitle>
               <BenefitDescription>
-                Het systeem herkent overlast plegers binnen een collectief.
+                Het systeem herkent ongewensten binnen een collectief. Hierdoor wordt uw horecagelegenheid een veiligere plek voor uw klanten.
               </BenefitDescription>
             </BenefitBlock>
           </ContentContainer>
@@ -46,8 +46,8 @@ class Benefits extends React.Component {
               <BenefitIcon icon={faMobileAlt} color="white" size="3x" />
               <BenefitTitle>Gebruiksvriendelijke app.</BenefitTitle>
               <BenefitDescription>
-                Door een gebruiksvriendelijke applicatie wordt het personeel of
-                de beveiliging direct op de hoogte gesteld van overlast plegers.
+                Door een gebruiksvriendelijke applicatie wordt de portier en/of
+                het personeel direct op de hoogte gesteld van ongewensten.
               </BenefitDescription>
             </BenefitBlock>
           </ContentContainer>
