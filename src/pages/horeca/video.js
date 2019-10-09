@@ -77,6 +77,18 @@ const Iframe = styled.iframe`
 const ContentWrapper = styled.div`
   margin: 0 auto;
   width: 60%;
+
+  @media (max-width: 480px) {
+    width: 90%;
+  }
+
+  @media (min-width: 481px) and (max-width: 650px) {
+    width: 80%;
+  }
+
+  @media (min-width: 651px) and (max-width: 1100px) {
+    width: 70%;
+  }
 `
 
 const DescriptionContainer = styled.div`

@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 
 import PageWrapper from "../components/common/pagewrapper"
 import Loader from "../components/common/loader"
@@ -26,6 +27,11 @@ class RetailPage extends React.Component {
     ) : (
       <>
         <PageWrapper type="retail">
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>Recnition - Retail</title>
+            <link rel="canonical" href="http://recnition.com/retail" />
+          </Helmet>
           <Video />
           <About />
           <Benefits />

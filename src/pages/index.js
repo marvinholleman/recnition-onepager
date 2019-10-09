@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
 import HorecaImage from "../images/horecaBackground.jpg"
@@ -55,6 +56,11 @@ class IndexPage extends React.Component {
   render() {
     return this.state.loading ? (
       <div>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Recnition - Home</title>
+          <link rel="canonical" href="http://recnition.com" />
+        </Helmet>
         <Loader/>
         <img
           src={ HorecaImage }
@@ -67,6 +73,11 @@ class IndexPage extends React.Component {
       </div>
     ) : (
       <WelcomeWrapper>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Recnition - Home</title>
+        <link rel="canonical" href="http://recnition.com" />
+      </Helmet>
         <SideWrapper href="/horeca">
           <HorecaBackground backgroundImage={this.state.horecaImage} />
           <DetailButtonWrapper>

@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
@@ -97,28 +98,26 @@ const Hero = styled.div`
   }
 `
 
-const LogoWrapper = styled.a``
+const LogoWrapper = styled.a`
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  padding: 2em;
+  z-index: 1000;`
 
 const Logo = styled.img`
-  height: 75px;
-  top: 45px;
-  left: 45px;
-  position: relative;
+  height: 4em;
+  margin: 0;
 `
 
 const HeroTextContainer = styled(ScrollAnimation)`
   display: flex;
   flex-direction: column;
   position: relative;
+  padding: 3em;
 
-  @media (min-width: 320px) and (max-width: 480px) {
-    position: relative;
-    right: 75px;
-  }
-
-  @media (min-width: 480px) and (max-width: 710px) {
-    position: relative;
-    right: 30px;
+  @media (max-width: 480px) {
+    padding: 1em;
   }
 `
 
@@ -136,9 +135,8 @@ const HeroText = styled.h1`
   line-height: 133%;
   font-weight: 400;
 
-  @media (min-width: 320px) and (max-width: 480px) {
-    max-width: 270px;
-    font-size: 23px;
+  @media (max-width: 480px) {
+    font-size: 1.5em;
   }
 `
 

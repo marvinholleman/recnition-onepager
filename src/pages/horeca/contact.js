@@ -237,6 +237,7 @@ const ContactFormWrapper = styled(ScrollAnimation)``
 const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
+  padding: 0 25px;
 
   @media (min-width: 320px) and (max-width: 480px) {
     padding: 0 25px;
