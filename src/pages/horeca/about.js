@@ -24,7 +24,7 @@ class About extends React.Component {
           <DescriptionContainer>
             <DescriptionImage src={Entry} />
             <Description>
-              1. Bij betreden van de horecagelegenheidwordt er een foto gemaakt.
+              1. Bij betreden van de horecagelegenheid wordt er een foto gemaakt.
             </Description>
           </DescriptionContainer>
           <DescriptionContainer>
@@ -74,7 +74,7 @@ const DescriptionContainer = styled.div`
   flex-direction: row;
   align-items: center;
 
-  @media (max-width: 480px) {
+  @media (max-width: 640px) {
     flex-direction: column;
   }
 `

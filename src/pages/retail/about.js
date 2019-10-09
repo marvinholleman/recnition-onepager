@@ -76,7 +76,7 @@ const DescriptionContainer = styled.div`
   flex-direction: row;
   align-items: center;
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (max-width: 640px) {
     flex-direction: column;
   }
 `

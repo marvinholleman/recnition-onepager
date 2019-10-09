@@ -47,13 +47,13 @@ class Header extends Component {
               <HeroTextContainer
                 animateIn="bounceInLeft"
                 animateOnce={true}
-                delay={1000}
+                delay={700}
               >
                 <HeroText>{this.props.heroText}</HeroText>
                 <ButtonContainer
                   animateIn="bounceInLeft"
                   animateOnce={true}
-                  delay={1200}
+                  delay={900}
                 >
                   <MoreButton onClick={e => this.scrollTo()}>
                     {this.props.herobuttonText}
