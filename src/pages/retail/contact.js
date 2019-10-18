@@ -132,7 +132,7 @@ class Contact extends React.Component {
                 <InputFieldWrapper>
                   <Input
                     type="hidden"
-                    value="contact-retail"
+                    value="contact-horeca"
                     name="form-name"
                   />
                   <InputContainer>
@@ -160,8 +160,6 @@ class Contact extends React.Component {
                       {this.state.organisationError}
                     </ValidationError>
                   </InputContainer>
-                </InputFieldWrapper>
-                <InputFieldWrapper>
                   <InputContainer>
                     <Input
                       name="email"
@@ -174,41 +172,20 @@ class Contact extends React.Component {
                     />
                     <ValidationError>{this.state.emailError}</ValidationError>
                   </InputContainer>
-                  <InputContainer>
-                    <Input
-                      name="phone"
-                      placeholder="Telefoonnummer"
-                      type="number"
-                      value={this.state.phone}
-                      onChange={this.handlePhoneChange}
-                      onBlur={this.validatePhone}
-                      error={this.state.phoneError}
-                    />
-                    <ValidationError>{this.state.phoneError}</ValidationError>
-                  </InputContainer>
+                  <SendButton
+                    type="submit"
+                    disabled={
+                      !this.state.name ||
+                      !this.state.email ||
+                      !this.state.organisation ||
+                      this.state.nameError ||
+                      this.state.organisationError ||
+                      this.state.emailError
+                    }
+                  >
+                    Verzenden{" "}
+                  </SendButton>
                 </InputFieldWrapper>
-                <TextArea
-                  name="message"
-                  placeholder="Vraag / Opmerking"
-                  value={this.state.message}
-                  onChange={this.handleMessageChange}
-                  onBlur={this.validateMessage}
-                  error={this.state.messageError}
-                />
-                <ValidationError>{this.state.messageError}</ValidationError>
-                <SendButton
-                  type="submit"
-                  disabled={
-                    !this.state.name ||
-                    !this.state.email ||
-                    !this.state.message ||
-                    this.state.messageError ||
-                    this.state.nameError ||
-                    this.state.emailError
-                  }
-                >
-                  Verzenden{" "}
-                </SendButton>
               </ContactForm>
             </ContactFormWrapper>
           </Container>
@@ -220,7 +197,7 @@ class Contact extends React.Component {
 
 const ContactContainer = styled.div`
   display: flex;
-  min-height: 600px;
+  min-height: 370px;
   padding-bottom: 50px;
   width: 100%;
   background-color: #2c2d31;
@@ -237,6 +214,7 @@ const ContactFormWrapper = styled(ScrollAnimation)``
 const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
+  padding: 0 25px;
 
   @media (min-width: 320px) and (max-width: 480px) {
     padding: 0 25px;
@@ -247,6 +225,10 @@ const InputFieldWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (min-width: 320px) and (max-width: 700px) {
+    flex-flow: wrap;
+  }
 `
 
 const Input = styled.input`
@@ -297,19 +279,27 @@ const SendButton = styled(Button)`
   background-color: white;
   color: black;
   width: 175px;
-  align-self: flex-end;
+  align-self: baseline;
   right: 50px;
-  margin-top: 20px;
+  margin-top: 10px;
 
   @media (min-width: 320px) and (max-width: 480px) {
     right: 0px;
+  }
+
+  @media (min-width: 320px) and (max-width: 700px) {
+    width: 100%;
   }
 `
 
 const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 49%;
+  width: 25%;
+
+  @media (min-width: 320px) and (max-width: 700px) {
+    width: 100%;
+  }
 `
 
 const ValidationError = styled.div`
