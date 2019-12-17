@@ -279,7 +279,7 @@ const SendButton = styled(Button)`
   background-color: white;
   color: black;
   width: 175px;
-  align-self: center;
+  align-self: baseline;
   right: 50px;
   margin-top: 10px;
 
