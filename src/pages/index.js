@@ -13,44 +13,46 @@ import "../theme/index.css"
 class IndexPage extends React.Component {
   state = {
     loading: true,
-    loadedImagesCount: 0
+    loadedImagesCount: 0,
   }
 
   constructor() {
-    super();
-    console.log('Initialising IndexPage');
+    super()
+    console.log("Initialising IndexPage")
   }
 
   imageLoaded() {
-    const imageCount = 4; // Use x2 due to onLoad firing twice (1st time happens on initialisation)
+    const imageCount = 4 // Use x2 due to onLoad firing twice (1st time happens on initialisation)
 
-    this.setState(prevState => {
-       return {loadedImagesCount: prevState.loadedImagesCount + 1}
-    }, () => { 
-      if (this.state.loadedImagesCount >= imageCount) {
-        this.setState({
-          loading: false
-        })
+    this.setState(
+      prevState => {
+        return { loadedImagesCount: prevState.loadedImagesCount + 1 }
+      },
+      () => {
+        if (this.state.loadedImagesCount >= imageCount) {
+          this.setState({
+            loading: false,
+          })
+        }
+        console.log("Loaded images count: ", this.state.loadedImagesCount)
       }
-      console.log('Loaded images count: ', this.state.loadedImagesCount);
-    })
+    )
   }
-
 
   handleHorecaLoaded() {
     this.setState({
-      horecaImage: HorecaImage
+      horecaImage: HorecaImage,
     })
-    console.log('Loaded horeca image');
-    this.imageLoaded();
+    console.log("Loaded horeca image")
+    this.imageLoaded()
   }
 
   handleRetailLoaded() {
     this.setState({
-      retailImage: RetailImage
+      retailImage: RetailImage,
     })
-    console.log('Loaded retail image');
-    this.imageLoaded();
+    console.log("Loaded retail image")
+    this.imageLoaded()
   }
 
   render() {
@@ -59,25 +61,19 @@ class IndexPage extends React.Component {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Recnition - Home</title>
-          <link rel="canonical" href="http://recnition.com" />
+          <link rel="canonical" href="https://recnition.com" />
         </Helmet>
-        <Loader/>
-        <img
-          src={ HorecaImage }
-          onLoad={this.handleHorecaLoaded()}
-        />
-        <img
-          src={ RetailImage }
-          onLoad={this.handleRetailLoaded()}
-        />
+        <Loader />
+        <img src={HorecaImage} onLoad={this.handleHorecaLoaded()} />
+        <img src={RetailImage} onLoad={this.handleRetailLoaded()} />
       </div>
     ) : (
       <WelcomeWrapper>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Recnition - Home</title>
-        <link rel="canonical" href="http://recnition.com" />
-      </Helmet>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Recnition - Home</title>
+          <link rel="canonical" href="https://recnition.com" />
+        </Helmet>
         <SideWrapper href="/horeca">
           <HorecaBackground backgroundImage={this.state.horecaImage} />
           <DetailButtonWrapper>

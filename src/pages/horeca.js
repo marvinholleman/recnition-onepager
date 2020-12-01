@@ -30,7 +30,7 @@ class HorecaPage extends React.Component {
           <Helmet>
             <meta charSet="utf-8" />
             <title>Recnition - Horeca</title>
-            <link rel="canonical" href="http://recnition.com/horeca" />
+            <link rel="canonical" href="https://recnition.com/horeca" />
           </Helmet>
           <Video />
           <About />

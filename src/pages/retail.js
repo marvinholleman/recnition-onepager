@@ -30,7 +30,7 @@ class RetailPage extends React.Component {
           <Helmet>
             <meta charSet="utf-8" />
             <title>Recnition - Retail</title>
-            <link rel="canonical" href="http://recnition.com/retail" />
+            <link rel="canonical" href="https://recnition.com/retail" />
           </Helmet>
           <Video />
           <About />

@@ -25,6 +25,23 @@
   flex-direction: column;
 }
 
+.policy-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #2c2d31;
+  flex-direction: column;
+  color: white;
+}
+
+.policytext-container {
+  max-width: 50rem;
+  padding: 2rem 5rem 5rem 5rem;
+  font-size: 0.8rem;
+}
+
 .thanks-icon {
   margin-bottom: 20px;
 }
